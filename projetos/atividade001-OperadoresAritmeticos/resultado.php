@@ -35,6 +35,9 @@
             if ($numero2 != 0) {
                 $resultado = $numero1 / $numero2;
                 echo "Resultado de <strong>$numero1 ÷ $numero2 = $resultado</strong>";
+            } ifelse ( $numero1 != 0) {
+                $resultado = $numero1 / $numero2;
+                echo "Resultado de <strong>$numero1 ÷ $numero2 = $resultado</strong>";
             } else {
                 echo "Erro: divisão por zero não é permitida.";
             }
