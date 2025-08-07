@@ -9,51 +9,53 @@
 
 <header>
 
-    <h1> Resultado da Operação</h1>
+    <h1>Resultado da Operação</h1>
 
 </header>
 
 <main>
 
-   <section class="caixa">
+    <section class="caixa">
         <?php
-        $numero1 = $_POST['numero1'];
-        $numero2 = $_POST['numero2'];
-        $operacao = $_POST['operacao'];
-        $resultado = 0;
+        if (isset($_POST['numero1'], $_POST['numero2'], $_POST['operacao'])) {
+            $numero1 = $_POST['numero1'];
+            $numero2 = $_POST['numero2'];
+            $operacao = $_POST['operacao'];
+            $resultado = 0;
+            $erro = false;
 
-        if ($operacao == "soma") {
-            $resultado = $numero1 + $numero2;
-            echo "Resultado de <strong>$numero1 + $numero2 = $resultado</strong>";
-        } elseif ($operacao == "subtracao") {
-            $resultado = $numero1 - $numero2;
-            echo "Resultado de <strong>$numero1 - $numero2 = $resultado</strong>";
-        } elseif ($operacao == "multiplicacao") {
-            $resultado = $numero1 * $numero2;
-            echo "Resultado de <strong>$numero1 x $numero2 = $resultado</strong>";
-        } elseif ($operacao == "divisao") {
-            if ($numero2 != 0) {
-                $resultado = $numero1 / $numero2;
-                echo "Resultado de <strong>$numero1 ÷ $numero2 = $resultado</strong>";
-            } ifelse ( $numero1 != 0) {
-                $resultado = $numero1 / $numero2;
-                echo "Resultado de <strong>$numero1 ÷ $numero2 = $resultado</strong>";
+            if ($operacao == "soma") {
+                $resultado = $numero1 + $numero2;
+                echo "Resultado de <strong>$numero1 + $numero2 = $resultado</strong>";
+            } elseif ($operacao == "subtracao") {
+                $resultado = $numero1 - $numero2;
+                echo "Resultado de <strong>$numero1 - $numero2 = $resultado</strong>";
+            } elseif ($operacao == "multiplicacao") {
+                $resultado = $numero1 * $numero2;
+                echo "Resultado de <strong>$numero1 x $numero2 = $resultado</strong>";
+            } elseif ($operacao == "divisao") {
+                if ($numero2 != 0) {
+                    $resultado = $numero1 / $numero2;
+                    echo "Resultado de <strong>$numero1 ÷ $numero2 = $resultado</strong>";
+                } else {
+                    echo "Erro: divisão por zero não é permitida.";
+                    $erro = true;
+                }
             } else {
-                echo "Erro: divisão por zero não é permitida.";
+                echo "Operação inválida.";
+                $erro = true;
             }
         } else {
-            echo "Operação inválida.";
+            echo "Dados incompletos ou não enviados.";
+            $erro = true;
         }
         ?>
-        <br>
-        <br>
 
-        <a href="index.php">Fazer outro Calculo</a>
-
+        <br><br>
+        <a href="index.php"><?php echo isset($erro) && $erro ? "Voltar" : "Fazer outro Calculo"; ?></a>
     </section>
 
 </main>
-
 
 </body>
 </html>

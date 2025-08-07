@@ -1,14 +1,18 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
+    
     const form = document.getElementById('formulario');
+    const mensagemErro = document.getElementById('mensagem-erro');
 
-    form.addEventListener('submit', function(event) {
-        const numero1 = document.getElementById('numero1').value;
-        const numero2 = document.getElementById('numero2').value;
+    form.addEventListener('submit', function (event) {
+        mensagemErro.innerHTML = '';
+
         const operacao = document.getElementById('operacao').value;
 
-        if (operacao === 'divisao' && parseFloat(numero2) === 0 || operacao === 'divisao' && parseFloat(numero1) === 0) {
-            alert("Erro: divisão por zero não é permitida.");
+        if (operacao === '') {
             event.preventDefault();
+            mensagemErro.innerHTML = 'Por favor, escolha uma operação.';
+            return;
         }
+
     });
 });

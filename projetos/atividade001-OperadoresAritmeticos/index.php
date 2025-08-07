@@ -17,10 +17,10 @@
 
     <form id="formulario" action="resultado.php" method="POST">
         <label for="numero1">Digite o primeiro número:</label><br>
-        <input type="number" id="numero1" name="numero1" required><br><br>
+        <input type="number" id="numero1" name="numero1" required><br>
 
         <label for="numero2">Digite o Segundo número:</label><br>
-        <input type="number" id="numero2" name="numero2" required><br><br>
+        <input type="number" id="numero2" name="numero2" required><br>
 
         <label for="operacao">Escolha a operação:</label><br>
         <select id="operacao" name="operacao">
@@ -33,9 +33,11 @@
 
         <button type="submit">Calcular</button>
     </form>
-
+    <div id="mensagem-erro" ></div>
+    
 </main>
  
     <script src="js/script.js"></script>
+    
 </body>
 </html>
