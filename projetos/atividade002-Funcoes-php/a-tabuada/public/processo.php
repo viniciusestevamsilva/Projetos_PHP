@@ -15,21 +15,24 @@
         <form class="formulario">
             <?php
 
-                if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['exibir']) && isset($_POST['numero'])) {
+                if (isset($_POST['exibir']) && isset($_POST['numero'])) {
 
                     $numero = (int) $_POST['numero'];
-
                     if ($numero >= 1 && $numero <= 10) {
 
-                        function exibirTabuada($n) {
-                            echo "<h2>Tabuada do $n</h2>";
+                        function exibirTabuada($numero) {
+                            echo "<h2>Tabuada do $numero</h2>";
                             for ($i = 1; $i <= 10; $i++) {
-                                echo "$n x $i = " . ($n * $i) . "<br>";
+                                echo "$numero x $i =" ;
+                                echo ($numero * $i);
+                                echo "<br>";
                             }
                         }
-
                         exibirTabuada($numero);
 
+                        echo "<br><br>";
+                        echo "<a href='../index.php'>página inicial</a>";
+                        echo "<br><br>";
                     } else {
                         echo "Número fora do intervalo. Escolha de 1 a 10.";
                     }

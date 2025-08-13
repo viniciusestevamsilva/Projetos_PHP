@@ -1,70 +1,73 @@
+<?php
+
+function calcularResultado($n1, $n2, $n3, $n4) {
+    $media = ($n1 + $n2 + $n3 + $n4) / 4;
+
+    if ($media >= 7) {
+        return ["media" => $media, "situacao" => "Aprovado"];
+    } elseif ($media >= 5) {
+        return ["media" => $media, "situacao" => "Recuperação"];
+    } else {
+        return ["media" => $media, "situacao" => "Reprovado"];
+    }
+}
+
+$aluno = null;
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cadastrar'])) {
+    $nome = trim($_POST['nome']);
+    $n1 = floatval($_POST['nota1']);
+    $n2 = floatval($_POST['nota2']);
+    $n3 = floatval($_POST['nota3']);
+    $n4 = floatval($_POST['nota4']);
+
+    $resultado = calcularResultado($n1, $n2, $n3, $n4);
+
+    $aluno = [
+        "nome" => $nome,
+        "media" => number_format($resultado['media'], 2, ',', '.'),
+        "situacao" => $resultado['situacao']
+    ];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Sistema de Notas</title>
+    <title>Resultado do Aluno</title>
     <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
 
-    <header>
-        <h1>Cadastrar Notas do Aluno</h1>
-    </header>
+<header>
+    <h1>Resultado</h1>
+</header>
 
-    <main>
-        <form class="formulario">
+<main>
+    <section>
+
+    <form class="formulario">
         <?php
-            session_start(); // Para manter os dados de alunos na sessão
-
-            // Função para calcular média e retornar resultado
-            function calcularResultado($n1, $n2, $n3, $n4) {
-                $media = ($n1 + $n2 + $n3 + $n4) / 4;
-
-                if ($media >= 7) {
-                    return ["media" => $media, "situacao" => "Aprovado"];
-                } elseif ($media >= 5) {
-                    return ["media" => $media, "situacao" => "Recuperação"];
-                } else {
-                    return ["media" => $media, "situacao" => "Reprovado"];
-                }
-            }
-
-            // Verifica se formulário foi enviado
-            if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['cadastrar'])) {
-
-                $nome = trim($_POST['nome']);
-                $n1 = floatval($_POST['nota1']);
-                $n2 = floatval($_POST['nota2']);
-                $n3 = floatval($_POST['nota3']);
-                $n4 = floatval($_POST['nota4']);
-
-                $resultado = calcularResultado($n1, $n2, $n3, $n4);
-
-                // Guarda aluno na sessão
-                $_SESSION['alunos'][] = [
-                    "nome" => $nome,
-                    "media" => number_format($resultado["media"], 2, ',', '.'),
-                    "situacao" => $resultado["situacao"]
-                ];
-            }
-
-            // Exibe a lista de alunos cadastrados
-            echo "<h2>Lista de Alunos Cadastrados</h2>";
-
-            if (isset($_SESSION['alunos']) && count($_SESSION['alunos']) > 0) {
-                echo "<ul>";
-                foreach ($_SESSION['alunos'] as $aluno) {
-                    echo "<li><strong>{$aluno['nome']}</strong> - Média: {$aluno['media']} - Situação: <em>{$aluno['situacao']}</em></li>";
-                }
-                echo "</ul>";
+            if ($aluno) {
+                echo "Aluno:" . htmlspecialchars($aluno['nome']) . "<br>";
+                echo "Média:" . $aluno['media'] . "<br>";
+                echo "Situação:" . $aluno['situacao'] . "<br>";
+            
             } else {
-                echo "<p>Nenhum aluno cadastrado ainda.</p>";
+                echo "Nenhum dado recebido";
             }
-            echo "<button><a href='../index.php'>Cadastrar novo aluno</a></button>";
+            
         ?>
 
-        </form>
-    </main>
+        <br><br>
+        <a href="../index.php">Cadastrar outro aluno</a>
+        <br><br>
+    </form>
+
+        
+    </section>
+</main>
 
 </body>
 </html>

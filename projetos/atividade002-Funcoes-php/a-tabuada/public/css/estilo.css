@@ -20,11 +20,43 @@ main {
     margin: 20px;
 }
 
+h1 {
+    text-align: center;
+}
+
 .formulario {
     background: #ffffff;
     border-radius: 5px;
     padding: 15px;
+    margin: auto;
     box-shadow: 0 0 5px #0000001a;
     width: 500px;
     text-align: center;
+}
+
+button {
+    background-color: #238dcab4;
+    color: #ffffff;
+    padding: 15px;
+    margin: 15px;
+    text-decoration: none;
+    border: 1px solid #333;
+}
+
+a{
+    background-color: #238dcab4;
+    color: #ffffff;
+    padding: 15px;
+    margin: 15px;
+    text-decoration: none;
+    border: 1px solid #333;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    list-style: none;
+    border: 2px solid #333;
 }
