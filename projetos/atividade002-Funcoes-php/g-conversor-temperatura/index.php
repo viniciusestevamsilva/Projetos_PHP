@@ -1,40 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
+<head>
     <meta charset="UTF-8">
-    <title>Operadores Aritméticos</title>
+    <title>Resultado da Conversão</title>
     <link rel="stylesheet" href="public/css/estilo.css">
-    </head>
+</head>
 <body>
 
-    <header>
+<header>
+    <h1>Conversor de Temperaturas</h1>
+</header>
 
-        <h1></h1>
+<main>
+    <form class="formulario" action="public/processo.php" method="post">
+        <label for="valor">Digite o valor da temperatura:</label><br>
+        <input type="number" id="valor" name="valor" required><br><br>
 
-    </header>
+        <label for="conversao">Escolha a conversão:</label><br>
+        <select id="conversao" name="conversao" required>
+            <option value="">--Selecione--</option>
+            <option value="c_f">Celsius → Fahrenheit</option>
+            <option value="c_k">Celsius → Kelvin</option>
+            <option value="f_c">Fahrenheit → Celsius</option>
+            <option value="f_k">Fahrenheit → Kelvin</option>
+            <option value="k_c">Kelvin → Celsius</option>
+            <option value="k_f">Kelvin → Fahrenheit</option>
+        </select><br><br>
 
-    <main>
-
-        <form class="formulario">
-            <label for=""></label><br>
-            <input type="" id="" name="" required><br>
-
-            <label for=""></label><br>
-            <input type="" id="" name="" required><br>
-
-            <label for="">Escolha a operação:</label><br>
-            <select id="" name="">
-                <option value="">--Selecione--</option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-            </select><br><br>
-
-            <button type="submit">Verificar</button>
-        </form>    
-    
-    </main>
+        <button type="submit">Converter</button>
+    </form>
+</main>
 
 </body>
 </html>

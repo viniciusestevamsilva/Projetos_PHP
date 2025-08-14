@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Operadores Aritméticos</title>
+    <title>Tabuada</title>
     <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>

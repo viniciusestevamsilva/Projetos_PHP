@@ -3,9 +3,9 @@
 function calcularResultado($n1, $n2, $n3, $n4) {
     $media = ($n1 + $n2 + $n3 + $n4) / 4;
 
-    if ($media >= 7) {
+    if ($media >= 15) {
         return ["media" => $media, "situacao" => "Aprovado"];
-    } elseif ($media >= 5) {
+    } elseif ($media >= 30) {
         return ["media" => $media, "situacao" => "Recuperação"];
     } else {
         return ["media" => $media, "situacao" => "Reprovado"];
@@ -41,7 +41,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cadastrar'])) {
 <body>
 
 <header>
+
     <h1>Resultado</h1>
+
 </header>
 
 <main>

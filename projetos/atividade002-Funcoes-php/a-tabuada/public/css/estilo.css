@@ -4,13 +4,14 @@ body {
     padding: 0;
     background: #f4f4f4;
     color: #333;
+    font-size: large;
 }
 
 header {
     background: #238dcab4;
     color: #ffffff;
     text-align: center;
-    padding: 15px 0;
+    padding: 15px;
 }
 
 main {
@@ -34,6 +35,14 @@ h1 {
     text-align: center;
 }
 
+.formulario input {
+    padding: 10px;
+    margin: 5px;
+    width: 200px;
+    border: 1px solid #333;
+    border-radius: 5px;
+}
+
 button {
     background-color: #238dcab4;
     color: #ffffff;
@@ -41,22 +50,20 @@ button {
     margin: 15px;
     text-decoration: none;
     border: 1px solid #333;
+    border-radius: 5px;
+    font-size: large;
 }
 
 a{
     background-color: #238dcab4;
     color: #ffffff;
     padding: 15px;
-    margin: 15px;
     text-decoration: none;
     border: 1px solid #333;
+    border-radius: 5px;
+    font-size: large;
 }
 
 ul {
     list-style: none;
-}
-
-li {
-    list-style: none;
-    border: 2px solid #333;
 }
