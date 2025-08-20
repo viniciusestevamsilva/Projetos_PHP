@@ -1,39 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
+<head>
     <meta charset="UTF-8">
-    <title>Operadores Aritméticos</title>
+    <title>Login Simples</title>
     <link rel="stylesheet" href="public/css/estilo.css">
-    </head>
+</head>
 <body>
 
     <header>
-
-        <h1></h1>
-
+        <h1>Login</h1>
     </header>
 
     <main>
 
-        <form class="formulario">
-            <label for=""></label><br>
-            <input type="" id="" name="" required><br>
+        <form class="formulario" action="public/processo.php" method="post">
+            <label for="usuario">Usuário:</label><br>
+            <input type="text" id="usuario" name="usuario" required><br><br>
 
-            <label for=""></label><br>
-            <input type="" id="" name="" required><br>
+            <label for="senha">Senha:</label><br>
+            <input type="password" id="senha" name="senha" required><br><br>
 
-            <label for="">Escolha a operação:</label><br>
-            <select id="" name="">
-                <option value="">--Selecione--</option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-            </select><br><br>
+            <button type="submit" name="logar">Entrar</button>
+        </form>
 
-            <button type="submit">Verificar</button>
-        </form>    
-    
     </main>
 
 </body>
