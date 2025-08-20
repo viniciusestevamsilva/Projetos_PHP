@@ -1,40 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
+<head>
     <meta charset="UTF-8">
-    <title>Operadores Aritméticos</title>
+    <title>Caixa Eletrônico</title>
     <link rel="stylesheet" href="public/css/estilo.css">
-    </head>
+</head>
 <body>
-
     <header>
-
-        <h1></h1>
-
+        <h1>Simulador de Caixa Eletrônico</h1>
     </header>
 
     <main>
+        <form class="formulario" method="post" action="public/processo.php">
+            <label for="valor">Informe o valor para saque:</label><br>
+            <input type="number" id="valor" name="valor" min="5" max="500" required>
+            <button type="submit">Sacar</button><br>
 
-        <form class="formulario">
-            <label for=""></label><br>
-            <input type="" id="" name="" required><br>
-
-            <label for=""></label><br>
-            <input type="" id="" name="" required><br>
-
-            <label for="">Escolha a operação:</label><br>
-            <select id="" name="">
-                <option value="">--Selecione--</option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-            </select><br><br>
-
-            <button type="submit">Verificar</button>
-        </form>    
-    
+            <label for="valor"><small>! Limite de somente R$500</small></label>
+        </form>
     </main>
-
 </body>
 </html>
