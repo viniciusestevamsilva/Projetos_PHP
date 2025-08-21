@@ -8,7 +8,7 @@
 <body>
 
     <header>
-        <h1>Exibir Tabuada de 1 a 10</h1>
+        <h1>Resultado do Saque</h1>
     </header>
 
     <main>

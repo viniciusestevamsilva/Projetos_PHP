@@ -1,46 +1,68 @@
-<?php
-session_start();
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Simples</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
 
-$usuarios = [
-    "joao" => "12345",
-    "maria" => "abcde",
-    "ana" => "senha123"
-];
+<body>
+    <header>
 
-$limiteTentativas = 3;
+        <h1>Bem-Vindo</h1>
 
-if (!isset($_SESSION['tentativas'])) {
-    $_SESSION['tentativas'] = 0;
-}
+    </header>
 
-function validarLogin($usuario, $senha, $usuarios) {
-    if (isset($usuarios[$usuario]) && $usuarios[$usuario] === $senha) {
-        return true;
-    }
-    return false;
-}
+    <main>
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logar'])) {
-    $usuario = trim($_POST['usuario']);
-    $senha = trim($_POST['senha']);
+        <form class="formulario">
+            <?php
+                session_start();
 
-    if ($_SESSION['tentativas'] >= $limiteTentativas) {
-        echo "Você excedeu o número de tentativas permitidas. Tente novamente mais tarde.";
-        exit();
-    }
+                $usuarios = [
+                    "joao" => "12345",
+                    "maria" => "abcde",
+                    "ana" => "senha123"
+                ];
 
-    if (validarLogin($usuario, $senha, $usuarios)) {
-  
-        echo "Bem-vindo, " . htmlspecialchars($usuario) . "! Você fez login com sucesso.";
-        $_SESSION['tentativas'] = 0;
+                $limiteTentativas = 3;
 
-    } else {
-  
-        $_SESSION['tentativas']++;
-        $restam = $limiteTentativas - $_SESSION['tentativas'];
-        echo "Usuário ou senha incorretos. Tentativas restantes: $restam";
-    }
-} else {
-    echo "Acesso inválido.";
-}
-?>
+                if (!isset($_SESSION['tentativas'])) {
+                    $_SESSION['tentativas'] = 0;
+                }
+
+                function validarLogin($usuario, $senha, $usuarios) {
+                    if (isset($usuarios[$usuario]) && $usuarios[$usuario] === $senha) {
+                        return true;
+                    }
+                    return false;
+                }
+
+                if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logar'])) {
+                    $usuario = trim($_POST['usuario']);
+                    $senha = trim($_POST['senha']);
+
+                    if ($_SESSION['tentativas'] >= $limiteTentativas) {
+                        echo "Você excedeu o número de tentativas permitidas. Tente novamente mais tarde.";
+                        exit();
+                    }
+
+                    if (validarLogin($usuario, $senha, $usuarios)) {
+                
+                        echo "Bem-vindo, " . htmlspecialchars($usuario) . "! Você fez login com sucesso.";
+                        $_SESSION['tentativas'] = 0;
+
+                    } else {
+                
+                        $_SESSION['tentativas']++;
+                        $restam = $limiteTentativas - $_SESSION['tentativas'];
+                        echo "Usuário ou senha incorretos. Tentativas restantes: $restam";
+                    }
+                } else {
+                    echo "Acesso inválido.";
+                }?>
+        </form>
+
+    </main>
+</body>
+</html>

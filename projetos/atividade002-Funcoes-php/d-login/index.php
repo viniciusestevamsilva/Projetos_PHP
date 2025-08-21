@@ -5,10 +5,12 @@
     <title>Login Simples</title>
     <link rel="stylesheet" href="public/css/estilo.css">
 </head>
-<body>
 
+<body>
     <header>
+
         <h1>Login</h1>
+
     </header>
 
     <main>

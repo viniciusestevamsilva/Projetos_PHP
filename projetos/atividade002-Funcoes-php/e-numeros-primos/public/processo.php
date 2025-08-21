@@ -46,17 +46,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['limite'])) {
 
     <form class="formulario">
 
-        <p>Primos encontrados:</p>
-    <ul>
-        <?php
-        foreach ($primos as $primo) {
-            echo "<li>$primo</li>";
-        }
-        ?>
-    </ul>
+            <p>Primos encontrados:</p>
+        <ul>
+            <?php
+                foreach ($primos as $primo) {
+                    echo "<li>$primo</li>";
+                }
+            ?>
+        </ul>
     </form>
     
 </main>
-
 </body>
 </html>

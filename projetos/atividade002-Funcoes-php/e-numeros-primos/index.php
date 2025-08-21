@@ -12,12 +12,14 @@
 </header>
 
 <main>
+    
     <form class="formulario" action="public/processo.php" method="post">
         <label for="limite">Digite um número:</label><br>
         <input type="number" id="limite" name="limite" min="1" required><br><br>
 
         <button type="submit" name="acao" value="gerar">Gerar Primos</button>
     </form>
+
 </main>
 
 </body>

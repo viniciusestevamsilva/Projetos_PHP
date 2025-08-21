@@ -48,6 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cadastrar'])) {
 </header>
 
 <main>
+    
     <section>
         <form class="formulario">
             <?php
@@ -67,6 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cadastrar'])) {
 
         </form>
     </section>
+
 </main>
 </body>
 </html>
