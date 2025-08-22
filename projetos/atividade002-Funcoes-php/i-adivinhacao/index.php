@@ -1,40 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
+<head>
     <meta charset="UTF-8">
-    <title>Operadores Aritméticos</title>
+    <title>Jogo de Adivinhação</title>
     <link rel="stylesheet" href="public/css/estilo.css">
-    </head>
+</head>
 <body>
 
-    <header>
+<header>
 
-        <h1></h1>
+    <h1>Jogo de Adivinhação</h1>
 
-    </header>
+</header>
 
-    <main>
+<main>
+    <section>
 
-        <form class="formulario">
-            <label for=""></label><br>
-            <input type="" id="" name="" required><br>
+        <form class="formulario" method="post" action="public/processo.php">
+            <label for="palpite">Digite um número entre 1 e 100:</label><br>
+            <input type="number" id="palpite" name="palpite" min="1" max="100" required><br><br>
 
-            <label for=""></label><br>
-            <input type="" id="" name="" required><br>
+            <button type="submit">Enviar Palpite</button>
+        </form>
 
-            <label for="">Escolha a operação:</label><br>
-            <select id="" name="">
-                <option value="">--Selecione--</option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-            </select><br><br>
-
-            <button type="submit">Verificar</button>
-        </form>    
-    
-    </main>
+    </section>
+</main>
 
 </body>
 </html>
