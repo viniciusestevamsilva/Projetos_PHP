@@ -18,7 +18,7 @@
 <main>
     <section>
 
-        <form class="formulario" method="post" action="public/processo.php">
+        <form class="formulario">
 
             <?php
                 session_start();
@@ -48,7 +48,7 @@
 
                 if ($palpite == $_SESSION['numero_secreto']) {
                     echo "<p>Você acertou em {$_SESSION['tentativas']} tentativas!</p>";
-                    echo "<a href='index.php'>Jogar novamente</a>";
+                    echo "<a href='../index.php'>Jogar novamente</a>";
                     echo "<br><br>";
 
                     session_destroy();
